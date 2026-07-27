@@ -1,0 +1,7 @@
+path: datasets/coco8 # dataset root dir
+train: images/train # train images (relative to 'path') 4 images
+val: images/val # val images (relative to 'path') 4 images
+test: images/test # test images (optional)
+
+nc: 80
+names:['person','bicycle',...,'toothbrush'] # 类别的名称，注意不要有空格
