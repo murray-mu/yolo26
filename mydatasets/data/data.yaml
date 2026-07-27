@@ -1,0 +1,71 @@
+# 数据集形式有两种：
+# 第一种
+# └─coco8
+#     ├─images
+#     │  ├─test
+#     │  ├─train
+#     │  └─val
+#     └─labels
+#         ├─test
+#         ├─train
+#         └─val
+# 第二种
+# └─coco8
+#     ├─train
+#     │  ├─images
+#     │  └─labels
+#     └─val
+#     │  ├─images
+#     │  └─labels
+#     └─test
+#        ├─images
+#        └─labels
+# 第三种
+# dataset/
+# ├── images/ # 所有图片混合存放
+# ├── labels/ # 所有标签混合存放
+# ├── train.txt # 记录训练集图片路径
+# ├── val.txt # 记录验证集图片路径
+# └── test.txt # 记录测试集图片路径
+# 三种均可，三种均可不用test测试集
+ 
+ 
+# 第一种写法
+path: datasets/coco8 # dataset root dir
+train: images/train # train images (relative to 'path') 4 images
+val: images/val # val images (relative to 'path') 4 images
+test: images/test # test images (optional)
+#————————————————————————————————或——————————————————————————————————————
+# train: datasets/coco8/images/train
+# val: datasets/coco8/images/val
+# test: datasets/coco8/images/test
+ 
+# 第二种写法
+# train: datasets/coco8/train/images
+# val: datasets/coco8/val/images
+# test: datasets/coco8/test/images
+ 
+# 第三种写法
+# train: datasets/train.txt
+# val: datasets/val.txt
+# test: datasets/test.txt
+ 
+ 
+
+# Classes
+# 第一种
+nc: 80
+names:['person','bicycle',...,'toothbrush'] # 类别的名称，注意不要有空格
+
+# 第二种
+# names:
+#   0: person
+#   1: bicycle
+#   2: car
+#   3: motorcycle
+#   ...
+#   78: hair drier
+#   79: toothbrush
+ 
+# Download script/URL (optional)
+# download: https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip
