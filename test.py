@@ -1,12 +1,12 @@
 import torch
- 
+
 # 1. 打印PyTorch版本和CUDA版本信息
 print(f"PyTorch版本: {torch.__version__}")
 print(f"CUDA版本（编译时）: {torch.version.cuda}")
- 
+
 # 2. 检查CUDA（即GPU）是否可用（这是最关键的判断）
 print(f"CUDA是否可用: {torch.cuda.is_available()}")
- 
+
 # 3. 如果可用，查看GPU设备信息
 if torch.cuda.is_available():
     print(f"可用GPU数量: {torch.cuda.device_count()}")
